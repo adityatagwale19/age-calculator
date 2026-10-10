@@ -35,6 +35,10 @@
 
         function calculateAge() {
             // make variable to store date when user select date
+            if (!userInput.value) {
+                result.textContent = "Please pick your date of birth first.";
+                return;
+            }
             let birthDate = new Date(userInput.value);
 
             //get date recieved from user
