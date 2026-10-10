@@ -1,0 +1,312 @@
+:root {
+    --color-bg-start: #4203e9;
+    --color-bg-end: #90bafc;
+    --color-surface: #ffffff;
+    --color-text: #1e1b3a;
+    --color-muted: #5f5b7a;
+    --color-border: #dcd8ee;
+    --color-primary: #4b2bd6;
+    --color-primary-dark: #3519b0;
+    --color-primary-soft: #efebff;
+    --color-accent: #ffd84d;
+    --color-accent-dark: #e6b800;
+    --color-error: #c62839;
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --space-xs: 6px;
+    --space-sm: 10px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 36px;
+    --shadow-card: 0 24px 60px rgba(30, 10, 110, 0.28);
+    --transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg) var(--space-md);
+    font-family: "Poppins", system-ui, sans-serif;
+    color: var(--color-text);
+    background: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
+}
+
+.card {
+    width: 100%;
+    max-width: 480px;
+    padding: var(--space-xl);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.illustration {
+    display: block;
+    width: 120px;
+    height: auto;
+    margin: 0 auto var(--space-sm);
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin-top: var(--space-xs);
+    font-size: 0.92rem;
+    color: var(--color-muted);
+}
+
+.age-form label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.form-row {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.form-row input {
+    flex: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 0 var(--space-md);
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-row input:hover {
+    border-color: #bdb6dd;
+}
+
+.form-row input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-primary-soft);
+}
+
+.form-row input[aria-invalid="true"] {
+    border-color: var(--color-error);
+}
+
+.form-row input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    height: 50px;
+    padding: 0 var(--space-lg);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-accent);
+    border: 0;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+    background: var(--color-accent-dark);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.form-message {
+    min-height: 1.4em;
+    margin-top: var(--space-sm);
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.results {
+    margin-top: var(--space-sm);
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.empty-state i {
+    font-size: 30px;
+    color: #bdb6dd;
+}
+
+.result-content {
+    animation: fade-up 0.35s ease;
+}
+
+.age-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+}
+
+.age-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-md) var(--space-xs);
+    background: var(--color-primary-soft);
+    border-radius: var(--radius-md);
+}
+
+.age-number {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.age-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-muted);
+}
+
+.facts {
+    list-style: none;
+    display: grid;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.fact {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.fact-icon {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--color-text);
+    background: var(--color-accent);
+}
+
+.fact-title,
+.fact-value,
+.fact-note {
+    display: block;
+}
+
+.fact-title {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+.fact-value {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.fact-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 440px) {
+    .card {
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    h1 {
+        font-size: 1.45rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .age-number {
+        font-size: 1.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
